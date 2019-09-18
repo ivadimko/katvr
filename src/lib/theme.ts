@@ -56,7 +56,7 @@ export const theme = {
   flexboxgrid: {
     gridSize: 12, // columns
     gutterWidth: 1, // rem
-    containerMaxWidth: 66, // rem
+    containerMaxWidth: 75, // rem
     breakpoints,
   },
 
