@@ -12,3 +12,7 @@ export const Grid = styled.div`
     `;
   }}
 `;
+
+export const PageWrapper = styled.div`
+  overflow: hidden;
+`;

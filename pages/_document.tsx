@@ -1,6 +1,9 @@
 import React, { ComponentClass } from 'react';
-import Document from 'next/document';
+import Document, {
+  Html, Head, Main, NextScript,
+} from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { PageWrapper } from '@/components/Common/GridContainer';
 
 export default class KatVRDocument extends Document {
   static async getInitialProps(ctx: any) {
@@ -28,5 +31,21 @@ export default class KatVRDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render() {
+    return (
+      <Html lang="en">
+        <Head>
+          <link rel="icon" href="/static/favicon.png" />
+        </Head>
+        <body>
+          <PageWrapper>
+            <Main />
+          </PageWrapper>
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }
