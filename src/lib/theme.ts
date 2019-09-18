@@ -41,6 +41,11 @@ export const theme = {
     black: 900,
   },
 
+  fontFamily: {
+    mark: 'Mark, sans-serif',
+    quantum: 'Quantum, sans-serif',
+  },
+
 
   // transition
   transition: {
@@ -63,3 +68,5 @@ export const theme = {
   // general
   scrollbarWidth: 'var(--scrollbar-width, 0px)',
 };
+
+export type ThemeType = typeof theme;

@@ -3,7 +3,7 @@ import Document, {
   Html, Head, Main, NextScript,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import { PageWrapper } from '@/components/Common/GridContainer';
+import { PageWrapper } from '@/components/style/GridContainer';
 
 export default class KatVRDocument extends Document {
   static async getInitialProps(ctx: any) {
