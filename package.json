@@ -5,19 +5,61 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx,.js --fix && stylelint './**/*.ts' './**/*.tsx'"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.9",
     "@types/styled-components": "^4.1.19",
+    "@zeit/next-css": "^1.0.1",
+    "classnames": "^2.2.6",
     "next": "9.0.6",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^2.5.3",
     "polished": "^3.4.1",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
+    "@mate-academy/stylelint-config": "0.0.6",
     "@types/node": "^12.7.5",
     "@types/react": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "husky": "^3.0.5",
+    "lint-staged": "^8.2.1",
+    "stylelint": "^11.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.8.0",
     "typescript": "^3.6.3"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js,ts,tsx}": [
+        "eslint --fix",
+        "git add"
+      ],
+      "*.{ts,tsx}": [
+        "stylelint",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "**/.next/**/*"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index --again",
+      "pre-commit": "lint-staged"
+    }
   }
 }
